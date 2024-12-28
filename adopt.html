@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adopt a Pet</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #b44a7f;
+        }
+        .pets-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .pet-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .pet-card img {
+            width: 100%;
+            height: auto;
+        }
+        .pet-card h3 {
+            color: #b44a7f;
+            padding: 10px;
+        }
+        .pet-card p {
+            padding: 0 10px 10px;
+            color: #333;
+        }
+        .pet-card a {
+            display: block;
+            text-align: center;
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 0 0 10px 10px;
+            transition: background-color 0.3s ease;
+        }
+        .pet-card a:hover {
+            background-color: #ff1493;
+        }
+        .pet-card:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="adopt.html">Adopt</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="AIRecommendation.html">AIRecommendation</a></li>
+        </ul>
+    </nav>
+
+    <!-- Pets List Section -->
+    <section class="pets-list">
+        <h2>Available Pets for Adoption</h2>
+
+        <!-- Example Pet Card -->
+        <div class="pet-card">
+            <img src="assets/images/cat1.jpg" alt="Fluffy the cat">
+            <h3>Fluffy</h3>
+            <p>Age: 2 Years | Breed: unknown but cutie</p>
+            <a href="pet-details.html?id=1">Adopt Me</a>
+        </div>
+        <div class="pet-card">
+            <img src="assets/images/cat2.jpg" alt="Pookie the cat">
+            <h3>Pookie</h3>
+            <p>Age: 1 Years | Breed: Homely</p>
+            <a href="pet-details.html?id=2">Adopt Me</a>
+        </div>
+        <div class="pet-card">
+            <img src="assets/images/cat3.jpg" alt="Cutie the cat">
+            <h3>Cutie</h3>
+            <p>Age: 1 Years | Breed: beauty</p>
+            <a href="pet-details.html?id=3">Adopt Me</a>
+        </div>
+        <div class="pet-card">
+            <img src="assets/images/dog1.jpg" alt="Butter the dog">
+            <h3>Butter</h3>
+            <p>Age: 2 Years | Breed: Pure Indian</p>
+            <a href="pet-details.html?id=4">Adopt Me</a>
+        </div>
+        <div class="pet-card">
+            <img src="assets/images/dog2.jpg" alt="Musky the dog">
+            <h3>Musky</h3>
+            <p>Age: 2 Years | Breed: Lonely but warm</p>
+            <a href="pet-details.html?id=5">Adopt Me</a>
+        </div>
+        <div class="pet-card">
+            <img src="assets/images/dog3.jpg" alt="Toothsy the dog">
+            <h3>Toothsy</h3>
+            <p>Age: 2 Years | Breed: Happyland</p>
+            <a href="pet-details.html?id=6">Adopt Me</a>
+        </div>
+        <div class="pet-card">
+            <img src="assets/images/kitt1.jpg" alt="Lolly the kitten">
+            <h3>Lolly</h3>
+            <p>Age: 7 months | Breed: Unknown</p>
+            <a href="pet-details.html?id=7">Adopt Me</a>
+        </div>
+        <div class="pet-card">
+            <img src="assets/images/pupp1.jpg" alt="Sheryy the puppy">
+            <h3>Sheryy</h3>
+            <p>Age: 5 months | Breed: Unknown</p>
+            <a href="pet-details.html?id=8">Adopt Me</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 PettingPets Pet Adoption | All Rights Reserved</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

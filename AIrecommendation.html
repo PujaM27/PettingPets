@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet AIRecommendations</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #b44a7f;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        form select, form input, form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        form button {
+            background-color: #ff69b4;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #ff1493;
+        }
+        #AIRecommendations {
+            margin-top: 20px;
+        }
+        #AIRecommendations ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #AIRecommendations ul li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Find Your Perfect Pet</h1>
+
+    <!-- Pet AIRecommendation Form -->
+    <form id="AIRecommendation-form">
+        <label for="size">Preferred Pet Size</label>
+        <select id="size" name="size" required>
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+        </select>
+
+        <label for="activity_level">Preferred Activity Level</label>
+        <select id="activity_level" name="activity_level" required>
+            <option value="Low">Low</option>
+            <option value="Moderate">Moderate</option>
+            <option value="High">High</option>
+        </select>
+
+        <label for="hypoallergenic">Hypoallergenic?</label>
+        <input type="checkbox" id="hypoallergenic" name="hypoallergenic">
+
+        <button type="submit">Get AIRecommendations</button>
+    </form>
+
+    <!-- AIRecommendations Section -->
+    <div id="AIRecommendations">
+        <h2>Your Recommended Pets:</h2>
+        <ul id="pet-list"></ul>
+    </div>
+
+    <!-- Script for Dynamic AIRecommendations -->
+    <script>
+        document.getElementById('AIRecommendation-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Collect user preferences
+            const size = document.getElementById('size').value;
+            const activity_level = document.getElementById('activity_level').value;
+            const hypoallergenic = document.getElementById('hypoallergenic').checked;
+
+            // Fetch AIRecommendations from the server
+            const response = await fetch('/get_AIRecommendations', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ size, activity_level, hypoallergenic })
+            });
+
+            // Parse the server's response
+            const data = await response.json();
+            const AIRecommendations = data.AIRecommendations;
+
+            // Display AIRecommendations
+            const petList = document.getElementById('pet-list');
+            petList.innerHTML = ''; // Clear previous AIRecommendations
+            AIRecommendations.forEach(pet => {
+                const petItem = document.createElement('li');
+                petItem.textContent = `${pet.name} - ${pet.age} - ${pet.breed}`;
+                petList.appendChild(petItem);
+            });
+        });
+    </script>
+</body>
+</html>

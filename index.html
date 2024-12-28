@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PettingPets Pet Adoption</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Section Styling */
+        section {
+            min-height: 100vh;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:nth-child(even) {
+            background-color: #eef2f7;
+        }
+
+        /* Navigation Updates */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Buttons */
+        .btn-adopt {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-adopt:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d39bf;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffa07a;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: rgb(187, 222, 106);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#hero-section">Home</a></li>
+            <li><a href="#pet-quiz-section">Quiz</a></li>
+            <li><a href="#adopt-section">Adopt</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="AI-Recommendation.html">AIRecommendation</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <header id="hero-section">
+        <h1>Welcome to PettingPets!</h1>
+        <p>We're dedicated to giving a loving home to every furry friend.</p>
+        <a href="#adopt-section" class="btn-adopt">Find Your New Best Friend</a>
+    </header>
+
+    <!-- AI AIRecommendation Section -->
+    <section id="ai-AIRecommendation-section">
+        <h2>Discover Your Perfect Pet with AI</h2>
+        <p>Using cutting-edge AI technology, we help you find the perfect furry companion tailored to your preferences.</p>
+        <a href="ai-AIRecommendation.html" class="btn-adopt">Try AI AIRecommendation</a>
+    </section>
+
+    <!-- Pet Quiz Section -->
+    <section id="pet-quiz-section" class="pet-quiz">
+        <h2>Take Our Pet Personality Quiz</h2>
+        <div id="pet-quiz">
+            <h3>Discover Your Ideal Pet!</h3>
+            <button id="quiz-button">Start Quiz</button>
+            <div id="quiz-result" style="display: none;">
+                <p>Your ideal pet is: <span id="ideal-pet"></span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adopt Section -->
+    <section id="adopt-section" class="adoption">
+        <h2>Adopt Your New Best Friend</h2>
+        <p>Browse through our adorable furry friends who are waiting for a loving home.</p>
+        <a href="adopt.html" class="btn-adopt">See All Pets</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 PettingPets | All Rights Reserved</p>
+        <p>Follow us on:</p>
+        <a href="https://www.linkedin.com/in/pujamazumdar/" target="_blank">LinkedIn</a> |
+        <a href="https://www.instagram.com/_puja_m27_/" target="_blank">Instagram</a> |
+        <a href="https://x.com/__sweetooth_" target="_blank">Twitter</a>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
